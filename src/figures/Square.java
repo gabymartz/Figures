@@ -3,20 +3,18 @@ package figures;
 public class Square {
     private int length;
 
-    public Square() {
-
-    }
-
     public Square(int length) {
         this.length = length;
     }
 
     public void printSquare() {
-        System.out.println("-------Printing Square "  + length  + "-------");
-        for(int w = 0; w < length; w++) {
-            System.out.print("*");
+        System.out.println("-----Printing Square " + length + " x " + length + " -----");
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                System.out.print(" * ");
+            }
+            System.out.println();
         }
-        System.out.println();
     }
 
     public int getLength() {
