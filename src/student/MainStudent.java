@@ -1,6 +1,6 @@
 package student;
 
-import exception.DuplicatedStudentCodeException;
+import exception.DuplicatedCodeStudentException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 public class MainStudent {
     public static void main(String[] args) {
         Student s1 = new Student("ups1", "Gabriel","Martillo", 19);
-        Student s2 = new Student("ups2","Joel","Veintilla", 22);
+        Student s2 = new Student("ups2","Joel","Zapata", 22);
         Student s5 = new Student("ups4","Alex", "Verstappen", 17);
 
         Student s3 = new Student();
@@ -30,14 +30,22 @@ public class MainStudent {
             addStudent(s3, studentList);
             addStudent(s4, studentList);
             addStudent(s5, studentList);
-        }catch (DuplicatedStudentCodeException ds){
+        }catch (DuplicatedCodeStudentException ds){
             System.out.println(ds.getMessage());
         }
     }
-    public static void addStudent(Student s, List<Student> studentList) throws DuplicatedStudentCodeException{
+    public static void addStudent(Student s, List<Student> studentList) throws DuplicatedCodeStudentException {
         for(Student st: studentList){
             if(st.getCodestudent().equalsIgnoreCase(s.getCodestudent())){
-                throw new DuplicatedStudentCodeException("Student Code " + s.getCodestudent() + ", already exists {Please, insert other Code}. StudentList: "+ studentList);
+                System.out.println("-----------------------------");
+
+                StringBuilder studentListMessage = new StringBuilder();
+                for(Student student: studentList){
+                    studentListMessage.append("\n").append(student.toString());
+                }
+                throw new DuplicatedCodeStudentException(
+                        "Student Code " + s.getCodestudent() + " already exists" + " {Please, insert other Code}.\n" +
+                        "-> StudentList: "+ studentListMessage.toString());
             }
         }
         studentList.add(s);
