@@ -1,27 +1,28 @@
 package student;
 
 public class Student {
-    private String codestudent;
+    private String studentcode;
     private String name;
     private String lastname;
-    private int age;
+    private Integer age;
 
 
-    public Student(){}
+    public Student(){
+    }
 
-    public Student(String codestudent, String name, String lastname, int age) {
-        this.codestudent = codestudent;
+    public Student(String codestudent, String name, String lastname, Integer age) {
+        this.studentcode = codestudent;
         this.name = name;
         this.lastname = lastname;
         this.age = age;
     }
 
     public String getCodestudent() {
-        return codestudent;
+        return studentcode;
     }
 
     public void setCodestudent(String codestudent) {
-        this.codestudent = codestudent;
+        this.studentcode = codestudent;
     }
 
     public String getName() {
@@ -40,11 +41,20 @@ public class Student {
         this.lastname = lastname;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
+    }
+    @Override
+    public String toString() {
+        return "Student{" +
+                "CodeStudent'" + studentcode + '\'' +
+                "name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
