@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="poo:jar">
+    <output-path>$PROJECT_DIR$/out</output-path>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$USER_HOME$/Downloads/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="poo" />
+      <element id="module-source" name="poo" />
+    </root>
+  </artifact>
+</component>

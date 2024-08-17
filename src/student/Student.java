@@ -10,19 +10,19 @@ public class Student {
     public Student(){
     }
 
-    public Student(String codestudent, String name, String lastname, Integer age) {
-        this.studentcode = codestudent;
+    public Student(String studentcode, String name, String lastname, Integer age) {
+        this.studentcode = studentcode;
         this.name = name;
         this.lastname = lastname;
         this.age = age;
     }
 
-    public String getCodestudent() {
+    public String getStudentcode() {
         return studentcode;
     }
 
-    public void setCodestudent(String codestudent) {
-        this.studentcode = codestudent;
+    public void setStudentcode(String studentcode) {
+        this.studentcode = studentcode;
     }
 
     public String getName() {
